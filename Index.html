@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RiskGrid | ESS Fire Risk Index</title>
+  <style>
+    :root{--bg:#0b1020;--card:#121a33;--text:#eaf0ff;--muted:#a9b4d0;--accent:#67d3ff;--line:#233055;}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif;background:linear-gradient(180deg,#070b16, #0b1020);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1060px;margin:0 auto;padding:28px 18px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .brand span{color:var(--accent)}
+    .nav a{color:var(--muted);margin-left:14px;font-size:14px}
+    .hero{padding:58px 0 22px}
+    .pill{display:inline-block;background:rgba(103,211,255,.12);border:1px solid rgba(103,211,255,.25);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px}
+    h1{font-size:38px;line-height:1.15;margin:14px 0 12px}
+    .sub{color:var(--muted);font-size:16px;line-height:1.6;max-width:760px}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .btn{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:transparent}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#081022;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin:28px 0}
+    .card{grid-column:span 12;background:rgba(18,26,51,.9);border:1px solid var(--line);border-radius:16px;padding:18px}
+    @media(min-width:820px){
+      .card.half{grid-column:span 6}
+      .card.third{grid-column:span 4}
+    }
+    h2{margin:0 0 10px;font-size:20px}
+    .muted{color:var(--muted);line-height:1.6}
+    .steps{display:grid;gap:10px}
+    .step{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(8,12,26,.35)}
+    .k{color:var(--accent);font-weight:700}
+    .zones{display:grid;gap:8px}
+    .zone{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .tag{color:var(--muted);font-size:13px}
+    .faq details{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:rgba(8,12,26,.35)}
+    .faq summary{cursor:pointer;font-weight:650}
+    .footer{padding:26px 0;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
+    input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(8,12,26,.35);color:var(--text)}
+    textarea{min-height:110px;resize:vertical}
+    label{font-size:13px;color:var(--muted)}
+    .row{display:grid;gap:10px}
+    @media(min-width:820px){.row{grid-template-columns:1fr 1fr}}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Risk<span>Grid</span></div>
+      <div>
+        <a href="#service">서비스</a>
+        <a href="#deliverables">산출물</a>
+        <a href="#validation">검증(옵션)</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">문의</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="pill">ESS Fire Risk Index · 보험/내부결재용 리포트</div>
+      <h1>ESS 화재 리스크를<br/>“설명 가능한 점수와 문서”로 정리하세요.</h1>
+      <div class="sub">
+        RiskGrid는 설계·설치·운영 정보를 기반으로 ESS 화재 관련 <b>상대 위험도(Fire Risk Index)</b>를 분류하고,
+        보험·내부 보고에 바로 쓰는 <b>1페이지 요약 리포트</b>를 자동 생성합니다.
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#contact">무료 1차 평가 요청</a>
+        <a class="btn" href="#deliverables">샘플 리포트 보기</a>
+      </div>
+    </section>
+
+    <div class="grid" id="service">
+      <div class="card half">
+        <h2>문제</h2>
+        <div class="muted">
+          사고가 나면 가장 무서운 질문은 <b>“왜 이 상태로 운영했습니까?”</b>입니다.<br/>
+          현장에는 체크리스트는 있어도, <b>표준화된 점수·근거·이력</b>이 부족합니다.
+        </div>
+      </div>
+      <div class="card half">
+        <h2>해결</h2>
+        <div class="steps">
+          <div class="step"><span class="k">1) 온라인 평가(10분)</span> 표준 질문에 응답</div>
+          <div class="step"><span class="k">2) FRI 산출</span> Risk Zone + 주요 리스크 요인 Top 3</div>
+          <div class="step"><span class="k">3) 리포트 자동 생성</span> 보험/내부 결재용 1페이지</div>
+          <div class="step"><span class="k">4) (옵션) Validation</span> 입력 정보 신뢰도 상향</div>
+        </div>
+      </div>
+
+      <div class="card third">
+        <h2>대상</h2>
+        <div class="muted">
+          • ESS 자산 소유주/운영사<br/>
+          • 보험사 언더라이팅/리스크팀
+        </div>
+      </div>
+
+      <div class="card third">
+        <h2>Risk Zone</h2>
+        <div class="zones">
+          <div class="zone"><b>80–100</b><span class="tag">Low Risk</span></div>
+          <div class="zone"><b>60–79</b><span class="tag">Medium Risk</span></div>
+          <div class="zone"><b>40–59</b><span class="tag">High Risk</span></div>
+          <div class="zone"><b>&lt; 40</b><span class="tag">Critical</span></div>
+        </div>
+      </div>
+
+      <div class="card third" id="validation">
+        <h2>Independent On-site Validation</h2>
+        <div class="muted">
+          온라인 평가 결과의 <b>신뢰도(Level)</b>를 높이기 위한 선택형 서비스입니다.<br/>
+          • 현장 확인(체크/사진/기록)<br/>
+          • 입력값 불일치 항목 표시<br/>
+          • 검증 표기된 리포트 재발행
+        </div>
+      </div>
+
+      <div class="card" id="deliverables">
+        <h2>산출물</h2>
+        <div class="muted">
+          • FRI 총점 및 Risk Zone<br/>
+          • 주요 리스크 기여 요인 Top 3<br/>
+          • 관리 옵션(보험/운영자 검토용)<br/>
+          • 평가 유효성 조건 및 면책 문구
+        </div>
+      </div>
+
+      <div class="card faq" id="faq">
+        <h2>FAQ</h2>
+        <details>
+          <summary>이 점수는 안전 인증(“안전합니다”)인가요?</summary>
+          <div class="muted">아니요. RiskGrid는 화재 발생 여부를 보증하지 않으며, 제공된 정보에 기반한 <b>상대적 위험도 분류</b>와 의사결정 참고자료를 제공합니다.</div>
+        </details>
+        <details>
+          <summary>보험 인수/보험료가 자동으로 결정되나요?</summary>
+          <div class="muted">아니요. 인수 여부·조건은 보험사의 내부 기준에 따릅니다. RiskGrid는 <b>검토를 돕는 표준화된 요약자료</b>를 제공합니다.</div>
+        </details>
+        <details>
+          <summary>평가 결과가 계속 유효한가요?</summary>
+          <div class="muted">SOC 운용 범위, 설비 구성 변경 등 주요 조건이 바뀌면 재평가를 권장합니다.</div>
+        </details>
+      </div>
+
+      <div class="card" id="contact">
+        <h2>무료 1차 평가 요청</h2>
+        <div class="muted">아래 정보를 남겨주시면, 1차 질문지(10문항)와 샘플 리포트를 안내드립니다.</div>
+        <!-- 실제 운영 시: 폼 액션을 Google Form/Typeform/서버 엔드포인트로 연결 -->
+        <form onsubmit="alert('데모 페이지입니다. 실제 운영 시 폼 전송을 연결하세요.'); return false;">
+          <div class="row" style="margin-top:12px;">
+            <div>
+              <label>회사/기관명</label>
+              <input placeholder="예) ○○에너지" required />
+            </div>
+            <div>
+              <label>담당자 성함</label>
+              <input placeholder="예) 홍길동" required />
+            </div>
+          </div>
+          <div class="row" style="margin-top:10px;">
+            <div>
+              <label>이메일</label>
+              <input type="email" placeholder="name@company.com" required />
+            </div>
+            <div>
+              <label>대상</label>
+              <input placeholder="예) ESS 소유주 / 보험사" />
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <label>메모 (선택)</label>
+            <textarea placeholder="예) 보험 갱신 심사 준비 / 신규 사이트 설치 전 검토"></textarea>
+          </div>
+          <div class="btns" style="margin-top:12px;">
+            <button class="btn primary" type="submit">문의 보내기</button>
+            <div class="small">※ 본 평가는 상대적 위험도 분류 자료이며, 안전을 보증하거나 인증을 의미하지 않습니다.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      © RiskGrid. 본 서비스는 제공 정보 기반의 상대적 위험도 평가(의사결정 보조)이며, 안전 인증 또는 사고 미발생을 보증하지 않습니다.
+    </div>
+  </div>
+</body>
+</html>
